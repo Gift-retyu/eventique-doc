@@ -1,0 +1,79 @@
+
+## Get Started with Eventique
+
+Eventique provides a seamless way to enhance communication between your server and React Native client applications. With the `eventique-push` SDK for the server side and the `react-native-eventique` module for the client side, you can push actions to your app in real-time without the need for constant polling.
+
+### Setting Up `eventique-push`
+
+1. **Install the package:**
+
+   ```bash
+   npm install eventique-push
+   ```
+
+2. **Initialize the SDK:**
+
+   ```javascript
+   const EventiquePush = require('eventique-push');
+
+   const eventique = new EventiquePush({ apiKey: 'your-api-key' });
+   ```
+
+3. **Push an action:**
+
+   ```javascript
+   eventique.push({ deviceId: 'device-id', action: 'remove_cart' })
+     .then(response => {
+       console.log('Action pushed successfully:', response);
+     })
+     .catch(error => {
+       console.error('Error pushing action:', error);
+     });
+   ```
+
+### Setting Up `react-native-eventique`
+
+1. **Install the package:**
+
+   ```bash
+   npm install react-native-eventique
+   ```
+
+2. **Link the library:**
+
+   For React Native 0.60 and above, auto-linking should take care of the link process. For older versions, you'll need to manually link the library:
+
+   ```bash
+   react-native link react-native-eventique
+   ```
+
+3. **Listen for actions in your app:**
+
+   In your React Native app, import the module and start listening for actions:
+
+   ```javascript
+   import { useEventiQueListener } from 'react-native-eventique';
+
+    const [message, isConnected] = useEventiQueListener();
+
+    // message is the action you sent on your server
+   ```
+
+
+### Upcoming Client SDKs
+
+We are actively developing additional client SDKs to expand the reach of Eventique. Upcoming SDKs include:
+
+- React Native for iOS
+- Next.js
+
+Stay tuned for these releases!
+### Note
+
+- The `eventique-push` SDK is designed for server-side use, while the `react-native-eventique` module is for client-side use in React Native Android apps.
+- Currently, `react-native-eventique` supports Android only. Support for other platforms is coming soon.
+- These modules are in alpha release and are not recommended for production use at this time.
+
+For more detailed documentation and examples, please refer to the respective npm pages:
+- [`eventique-push`](https://www.npmjs.com/package/eventique-push)
+- [`react-native-eventique`](https://www.npmjs.com/package/react-native-eventique)

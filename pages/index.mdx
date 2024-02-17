@@ -1,11 +1,36 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
 
-## What is Nextra?
+# Eventique
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+Eventique is a comprehensive solution designed to enhance communication between server and client applications in real-time. It consists of two main components: the Eventique SDK and the Eventique Module.
 
-## Documentation
+## Eventique SDK
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+The Eventique SDK, [eventique-push](https://www.npmjs.com/package/eventique-push), is a Node.js package that allows server-side applications to push actions to client apps efficiently. This eliminates the need for constant polling by the client app, reducing network traffic and server load. The SDK enables targeted actions such as notifying about updates, clearing carts, or any custom action required by the app.
+
+## Eventique Module
+
+The Eventique Module, [react-native-eventique](https://www.npmjs.com/package/react-native-eventique), is a lightweight and efficient React Native library for Android apps. It listens for server events and performs specified actions within the app. This module works in conjunction with the Eventique SDK, enabling real-time communication and dynamic interaction without the need for polling.
+
+## Eventique Push
+
+Eventique Push is a tool within the Eventique ecosystem that facilitates the pushing of updates from the server to the client applications. It works seamlessly with the Eventique SDK and Module to ensure timely and efficient communication.
+
+## Client Applications
+
+Currently, Eventique is implemented for Android clients through the Eventique Module. Support for other client platforms is in development and will be available soon.
+
+## Alpha Release
+
+Eventique is currently in alpha release and is not recommended for production use. It is under active development, and we welcome feedback and contributions from the developer community.
+
+## Benefits
+
+- **Reduced Server Load:** By eliminating constant polling, Eventique reduces the load on your server, leading to better performance and scalability.
+- **Efficient Communication:** Eventique enables real-time communication between the server and client apps, ensuring that actions are performed promptly and efficiently.
+- **Easy Integration:** Both the Eventique SDK and Module are designed for easy integration into existing projects, with clear documentation and straightforward APIs.
+
+Eventique is the perfect choice for developers looking to enhance the interactivity and responsiveness of their apps without compromising on performance.
+
+## License
+
+[MIT](LICENSE)
